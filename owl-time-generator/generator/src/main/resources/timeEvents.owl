@@ -1,0 +1,2314 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.intelligence.tuc.gr/2011/timeEvents"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.intelligence.tuc.gr/2011/timeEvents">
+    <Prefix name="timezone" IRI="http://www.w3.org/2006/timezone#"/>
+    <Prefix name="timeEvents" IRI="http://www.intelligence.tuc.gr/2011/timeEvents#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="owlapi" IRI="http://www.semanticweb.org/owlapi#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="owl2xml" IRI="http://www.w3.org/2006/12/owl2-xml#"/>
+    <Prefix name="TR" IRI="http://www.w3.org/TR/"/>
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="time" IRI="http://www.w3.org/2006/time#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <AbbreviatedIRI>TR:owl-time</AbbreviatedIRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">An OWL Ontology of Time (OWL-Time).</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI=":Thing"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:DateTimeInterval"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:DayOfWeek"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:Instant"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:Interval"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="time:Year"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="timezone:TimeZone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dataPropertyOP"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#during"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#equals"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#overlaps"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#participatesIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:after"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:before"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:dayOfWeek"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:hasDateTimeDescription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:hasDurationDescription"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:inDateTime"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:inside"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:timeZone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="time:unitType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:day"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:dayOfYear"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:days"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:hour"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:hours"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:inXSDDateTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:minute"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:minutes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:month"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:months"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:second"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:seconds"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:week"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:weeks"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:xsdDateTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:year"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="time:years"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Friday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Monday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Saturday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Sunday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Thursday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Tuesday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:Wednesday"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitDay"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitHour"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitMinute"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitMonth"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitSecond"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitWeek"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual abbreviatedIRI="time:unitYear"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:gDay"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:gMonth"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:gYear"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="time:DayOfWeek"/>
+        <ObjectOneOf>
+            <NamedIndividual abbreviatedIRI="time:Wednesday"/>
+            <NamedIndividual abbreviatedIRI="time:Friday"/>
+            <NamedIndividual abbreviatedIRI="time:Saturday"/>
+            <NamedIndividual abbreviatedIRI="time:Tuesday"/>
+            <NamedIndividual abbreviatedIRI="time:Monday"/>
+            <NamedIndividual abbreviatedIRI="time:Thursday"/>
+            <NamedIndividual abbreviatedIRI="time:Sunday"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+        <ObjectUnionOf>
+            <Class abbreviatedIRI="time:Instant"/>
+            <Class abbreviatedIRI="time:Interval"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+        <ObjectOneOf>
+            <NamedIndividual abbreviatedIRI="time:unitMonth"/>
+            <NamedIndividual abbreviatedIRI="time:unitMinute"/>
+            <NamedIndividual abbreviatedIRI="time:unitDay"/>
+            <NamedIndividual abbreviatedIRI="time:unitHour"/>
+            <NamedIndividual abbreviatedIRI="time:unitYear"/>
+            <NamedIndividual abbreviatedIRI="time:unitSecond"/>
+            <NamedIndividual abbreviatedIRI="time:unitWeek"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <Class abbreviatedIRI=":Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="time:unitType"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="time:dayOfWeek"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="time:timeZone"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:day"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:dayOfYear"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:hour"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:minute"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:month"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:second"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:week"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:year"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DateTimeInterval"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:days"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:hours"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:minutes"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:months"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:seconds"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:weeks"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+        <DataMaxCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:years"/>
+        </DataMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:Instant"/>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:Interval"/>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+        <Class abbreviatedIRI="time:Interval"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:Year"/>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:Year"/>
+        <DataExactCardinality cardinality="0">
+            <DataProperty abbreviatedIRI="time:days"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:Year"/>
+        <DataExactCardinality cardinality="0">
+            <DataProperty abbreviatedIRI="time:hours"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:Year"/>
+        <DataExactCardinality cardinality="0">
+            <DataProperty abbreviatedIRI="time:minutes"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:Year"/>
+        <DataExactCardinality cardinality="0">
+            <DataProperty abbreviatedIRI="time:months"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:Year"/>
+        <DataExactCardinality cardinality="0">
+            <DataProperty abbreviatedIRI="time:seconds"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:Year"/>
+        <DataExactCardinality cardinality="0">
+            <DataProperty abbreviatedIRI="time:weeks"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="time:Year"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="time:years"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class abbreviatedIRI="time:Instant"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:Friday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:DayOfWeek"/>
+        <NamedIndividual abbreviatedIRI="time:Friday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:Monday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:DayOfWeek"/>
+        <NamedIndividual abbreviatedIRI="time:Monday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:Saturday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:DayOfWeek"/>
+        <NamedIndividual abbreviatedIRI="time:Saturday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:Sunday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:DayOfWeek"/>
+        <NamedIndividual abbreviatedIRI="time:Sunday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:Thursday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:DayOfWeek"/>
+        <NamedIndividual abbreviatedIRI="time:Thursday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:Tuesday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:DayOfWeek"/>
+        <NamedIndividual abbreviatedIRI="time:Tuesday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:Wednesday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:DayOfWeek"/>
+        <NamedIndividual abbreviatedIRI="time:Wednesday"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:unitDay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+        <NamedIndividual abbreviatedIRI="time:unitDay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:unitHour"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+        <NamedIndividual abbreviatedIRI="time:unitHour"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:unitMinute"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+        <NamedIndividual abbreviatedIRI="time:unitMinute"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:unitMonth"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+        <NamedIndividual abbreviatedIRI="time:unitMonth"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:unitSecond"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+        <NamedIndividual abbreviatedIRI="time:unitSecond"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:unitWeek"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+        <NamedIndividual abbreviatedIRI="time:unitWeek"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="time:unitYear"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+        <NamedIndividual abbreviatedIRI="time:unitYear"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI=":Thing"/>
+        <NamedIndividual abbreviatedIRI="TR:owl-time"/>
+    </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#dataPropertyOP"/>
+        <ObjectProperty IRI="#participatesIn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#during"/>
+        <ObjectProperty abbreviatedIRI=":topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#equals"/>
+        <ObjectProperty IRI="#overlaps"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:before"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty IRI="#overlaps"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <ObjectProperty IRI="#overlaps"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <ObjectProperty IRI="#overlaps"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+        <ObjectProperty IRI="#overlaps"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+        <ObjectProperty IRI="#overlaps"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+        <ObjectProperty IRI="#overlaps"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+        <ObjectProperty IRI="#overlaps"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+        <ObjectProperty IRI="#overlaps"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+        <ObjectProperty IRI="#overlaps"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:before"/>
+        <ObjectProperty abbreviatedIRI="time:after"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+    </FunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#equals"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty abbreviatedIRI="time:before"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty abbreviatedIRI="time:before"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#dataPropertyOP"/>
+        <Class abbreviatedIRI=":Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#during"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#equals"/>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#participatesIn"/>
+        <Class abbreviatedIRI=":Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:before"/>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:dayOfWeek"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:hasDateTimeDescription"/>
+        <Class abbreviatedIRI="time:DateTimeInterval"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:hasDurationDescription"/>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:inDateTime"/>
+        <Class abbreviatedIRI="time:Instant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:inside"/>
+        <Class abbreviatedIRI="time:Interval"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:timeZone"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="time:unitType"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dataPropertyOP"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#during"/>
+        <Class abbreviatedIRI="time:Interval"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#equals"/>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#participatesIn"/>
+        <Class abbreviatedIRI=":Thing"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:before"/>
+        <Class abbreviatedIRI="time:TemporalEntity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:dayOfWeek"/>
+        <Class abbreviatedIRI="time:DayOfWeek"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+        <Class abbreviatedIRI="time:Instant"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:hasDateTimeDescription"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:hasDurationDescription"/>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+        <Class abbreviatedIRI="time:Instant"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:inDateTime"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:inside"/>
+        <Class abbreviatedIRI="time:Instant"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+        <Class abbreviatedIRI="time:ProperInterval"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:timeZone"/>
+        <Class abbreviatedIRI="timezone:TimeZone"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="time:unitType"/>
+        <Class abbreviatedIRI="time:TemporalUnit"/>
+    </ObjectPropertyRange>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#equals"/>
+        <ObjectProperty abbreviatedIRI="time:after"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty IRI="#equals"/>
+        <ObjectProperty abbreviatedIRI="time:before"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:after"/>
+        <ObjectProperty abbreviatedIRI="time:before"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalAfter"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalContains"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalMetBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlappedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DisjointObjectProperties>
+        <ObjectProperty abbreviatedIRI="time:intervalStartedBy"/>
+        <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+    </DisjointObjectProperties>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:day"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:dayOfYear"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:days"/>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:hour"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:hours"/>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:inXSDDateTime"/>
+        <Class abbreviatedIRI="time:Instant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:minute"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:minutes"/>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:month"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:months"/>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:second"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:seconds"/>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:week"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:weeks"/>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:xsdDateTime"/>
+        <Class abbreviatedIRI="time:DateTimeInterval"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:year"/>
+        <Class abbreviatedIRI="time:DateTimeDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="time:years"/>
+        <Class abbreviatedIRI="time:DurationDescription"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:day"/>
+        <Datatype abbreviatedIRI="xsd:gDay"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:dayOfYear"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:days"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:hour"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:hours"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:inXSDDateTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:minute"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:minutes"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:month"/>
+        <Datatype abbreviatedIRI="xsd:gMonth"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:months"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:second"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:seconds"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:week"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:weeks"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:xsdDateTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:year"/>
+        <Datatype abbreviatedIRI="xsd:gYear"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="time:years"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:Instant"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:Instant"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="time:inXSDDateTime"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="time:inXSDDateTime"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#w"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:equal">
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#w"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:Instant"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:Instant"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="time:inXSDDateTime"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty abbreviatedIRI="time:inXSDDateTime"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#w"/>
+            </DataPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:lessThan">
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#w"/>
+            </BuiltInAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#b"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#b"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#b"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class abbreviatedIRI="time:ProperInterval"/>
+                <Variable IRI="urn:swrl#x"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalBefore"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#b"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalDuring"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#b"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalEquals"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#c"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalFinishes"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#b"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalMeets"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#b"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalOverlaps"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#equals"/>
+                <Variable IRI="urn:swrl#y"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasBeginning"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#y"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#a"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:hasEnd"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#z"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:intervalStarts"/>
+                <Variable IRI="urn:swrl#x"/>
+                <Variable IRI="urn:swrl#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="time:before"/>
+                <Variable IRI="urn:swrl#z"/>
+                <Variable IRI="urn:swrl#c"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Event</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">A class that represents a n-ary temporal relation. An instance of the relation linking the n individuals (subject, object, time interval) is then an instance of this class.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#dataPropertyOP</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Super property of all properties that link an individual to an event instance. The specific event is subject of a data property triple.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#during</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An object property that relates an instance of the event class to a time interval individual. This means that the current event took place during the specified time interval.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#overlaps</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">An object property that relates two time interval instances that some way overlap each other.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#participatesIn</IRI>
+        <Literal xml:lang="en" datatypeIRI="&rdf;PlainLiteral">Super property of all properties that participate in temporal &quot;triples&quot;. Every property that is converted to temporal becomes subproperty of this object property.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
